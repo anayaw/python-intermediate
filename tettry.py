@@ -39,14 +39,16 @@ tile_to_points = {'E': 1, 'A': 1, 'I': 1, 'O': 1, 'N': 1, 'R': 1, 'T': 1, 'L': 1
                   'Q': 10, 'Z': 10}
 
 def get_new_tiles(num):
-    hand = r.sample(get_new_tiles,num)
-    num.remove(hand)
-    '''
-    The parameter 'num' is how many tiles the user needs.
-    It should fetch 'num' RANDOM tiles from the TILES list.
-    Then, remove each of these tiles from the TILES list.
-    Return this list of random tiles.
+    num = int(input("How many tiles: "))
+    hand = r.sample(TILES, num)
+    for tile in hand:
+        TILES.remove(tile)
+    return hand
 
-    HINT: What do we need at the TOP of the code in order to use randomness?
+def print_hand(hand):
+    '''
+    The parameter 'hand' is a list of the tiles in a player's hand.
+    This function should print out each tile in the hand along with the points for that tile.
+    You can print in any format, but make it look nice!
     '''
     pass
